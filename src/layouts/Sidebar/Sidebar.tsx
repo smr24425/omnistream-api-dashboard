@@ -32,7 +32,7 @@ export const Sidebar: React.FC<SidebarProps> = () => {
     <aside className={`${styles.sidebar} hidden-mobile`}>
       <div className={styles.logo} onClick={() => navigate('/')} title="OmniStream">
         <img
-          src="/favicon.svg"
+          src={`${import.meta.env.BASE_URL}favicon.svg`}
           alt="OmniStream"
           className={styles.logoImg}
         />
