@@ -1,0 +1,107 @@
+@import './variables';
+
+// --- 卡片基礎架構 ---
+@mixin panel-base {
+  @include glass-panel;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// --- 卡片標題欄 (Header) ---
+@mixin panel-header {
+  height: 44px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-bottom: 1px solid $border-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+
+  .title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-primary;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+// --- 卡片內容區 ---
+@mixin panel-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+// --- 通用標籤 (Badge) ---
+@mixin status-badge($color: $success-color) {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color;
+  background: rgba($color, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: $color;
+    border-radius: 50%;
+    box-shadow: 0 0 8px $color;
+  }
+}
+
+// --- 動作按鈕 (如刪除) ---
+@mixin action-button($hover-color: #ff4444) {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 1rem;
+
+  &:hover {
+    background: rgba($hover-color, 0.1);
+    color: $hover-color;
+  }
+}
+
+// --- 圖表軸標籤 (Y-Axis Labels) ---
+@mixin chart-axis-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  user-select: none;
+}

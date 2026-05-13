@@ -1,0 +1,103 @@
+@import '../../../styles/variables';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $z-modal-overlay;
+  padding: 20px;
+}
+
+.modal {
+  width: 100%;
+  background: #181b1f;
+  border: 1px solid rgba($accent-color, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+@keyframes modalScale {
+  from {
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  padding: 18px 24px;
+  background: #222529;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: $text-secondary;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #fff;
+    transform: rotate(90deg);
+  }
+}
+
+.body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+
+  // 自定義滾動條
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+}
+
+.footer {
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}

@@ -1,0 +1,71 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+.header {
+  @include panel-header;
+
+  .badge {
+    @include status-badge(#818cf8);
+  }
+
+  .deleteBtn {
+    @include action-button(#ff4444);
+    font-size: 0.9rem;
+  }
+}
+
+.content {
+  @include panel-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.mainValue {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: $text-primary;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: baseline;
+
+  .unit {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-secondary;
+    margin-left: 6px;
+    opacity: 0.8;
+  }
+}
+
+.footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trendLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.subtext {
+  font-size: 0.7rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

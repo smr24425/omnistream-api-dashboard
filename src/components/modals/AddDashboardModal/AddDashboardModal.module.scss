@@ -1,0 +1,29 @@
+@use '../../../styles/forms';
+@import '../../../styles/variables';
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+// 讓 FormField 內的 input 繼承 form-field 樣式
+.formGroup :global(.formField) {
+  @extend %form-field;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+}
+
+.cancelBtn {
+  @extend %btn-cancel;
+}
+
+.confirmBtn {
+  @extend %btn-confirm;
+}

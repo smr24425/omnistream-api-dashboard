@@ -1,0 +1,78 @@
+@import '../../../styles/variables';
+
+.proxyGuide {
+  margin-top: 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .icon { font-size: 1.8rem; color: #f59e0b; }
+  h4 { margin: 0 0 4px 0; color: #fff; }
+  p { margin: 0; font-size: 0.9rem; color: $text-secondary; }
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  p { margin: 0; font-size: 0.9rem; color: $text-secondary; b { color: #fff; } }
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+
+  .badge {
+    background: rgba($accent-color, 0.15);
+    color: $accent-color;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .link {
+    color: $accent-color;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.codeBlock {
+  background: #090b0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+
+  pre {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.5;
+  }
+}

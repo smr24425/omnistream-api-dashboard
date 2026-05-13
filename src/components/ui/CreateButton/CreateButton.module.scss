@@ -1,0 +1,17 @@
+@use '../../../styles/forms' as *;
+
+.createBtn {
+  @extend %btn-confirm;
+  
+  // 這裡可以做一些針對 CreateButton 的微調
+  .icon {
+    font-size: 1.1rem;
+    stroke-width: 2.5px;
+  }
+
+  .text {
+    // 確保文字與圖標垂直居中
+    display: flex;
+    align-items: center;
+  }
+}

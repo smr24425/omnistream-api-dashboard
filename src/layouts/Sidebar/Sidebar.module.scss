@@ -1,0 +1,93 @@
+@import '../../styles/variables';
+
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  background: #0b0b0e;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0;
+  z-index: 100;
+}
+
+.logo {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .logoImg {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: filter 0.2s, transform 0.2s;
+
+    &:hover {
+      filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.6));
+      transform: scale(1.05);
+    }
+  }
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navItem {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-secondary;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s;
+  position: relative;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    color: #fff;
+    background: rgba($accent-color, 0.1);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 10%;
+      height: 80%;
+      width: 3px;
+      background: $accent-color;
+      border-radius: 0 2px 2px 0;
+    }
+  }
+}
+
+.userProfile {
+  margin-top: auto;
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,0 +1,27 @@
+@use '../../../styles/forms';
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  @extend %form-field;
+}
+
+.row {
+  @extend %form-row;
+}
+
+.cancelBtn {
+  @extend %btn-cancel;
+}
+
+.confirmBtn {
+  @extend %btn-confirm;
+}
+
+.subIcon {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

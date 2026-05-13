@@ -1,0 +1,167 @@
+@import '../../../styles/variables';
+
+.tutorialContainer {
+  background: rgba($accent-color, 0.03);
+  border: 1px solid rgba($accent-color, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+
+  .mainIcon { font-size: 2rem; color: $accent-color; }
+  h3 { margin: 0 0 4px 0; color: #fff; font-size: 1.2rem; }
+  p { margin: 0; color: $text-secondary; font-size: 0.9rem; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #0d0f12;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &.highlight {
+    border-color: rgba($accent-color, 0.3);
+    background: rgba($accent-color, 0.02);
+  }
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  svg { color: $accent-color; }
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  pre {
+    flex: 1;
+    background: rgba(0,0,0,0.4);
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .arrow { color: $accent-color; font-weight: 800; }
+
+  code {
+    background: $accent-color;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+}
+
+.desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: $text-secondary;
+  b { color: #fff; }
+}
+
+.proTip {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  color: $text-secondary;
+  
+  strong { color: $accent-color; margin-right: 8px; }
+  code { color: #fff; background: rgba(255,255,255,0.05); padding: 2px 4px; border-radius: 3px; }
+}
+
+.proxySection {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.05);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  .stepNum {
+    width: 28px;
+    height: 28px;
+    background: #6366f1;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    b { color: #fff; }
+    a { color: #818cf8; text-decoration: none; &:hover { text-decoration: underline; } }
+  }
+}
+
+.codeBlock {
+  background: #090b0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin-left: 44px;
+  overflow-x: auto;
+
+  pre {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.5;
+  }
+}

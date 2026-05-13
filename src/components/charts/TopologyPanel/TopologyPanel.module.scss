@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+.header {
+  @include panel-header;
+  
+  .badge {
+    @include status-badge(#818cf8); // 使用紫色系代表網路
+  }
+
+  .deleteBtn {
+    @include action-button(#ff4444);
+  }
+}
+
+.canvas {
+  @include panel-content;
+  width: 100%;
+  height: 100%;
+}

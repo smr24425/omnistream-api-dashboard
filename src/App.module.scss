@@ -1,0 +1,27 @@
+@import './styles/variables';
+
+.appContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color;
+  overflow: hidden; // 禁止 body 滾動，使用內部滾動
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // 防止 Flex 項目溢出
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative; // 建立層疊上下文
+  
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
+  background-size: 30px 30px;
+}

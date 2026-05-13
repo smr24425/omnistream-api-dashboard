@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+@import '../../../styles/forms';
+
+.fieldContainer {
+  @extend %form-field;
+  width: 100%;
+
+  label {
+    // 覆寫全域標籤顏色為更亮的白色，提升可讀性
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.required {
+  color: #ff4d4f;
+  font-size: 1rem;
+  margin-left: 4px;
+  line-height: 1;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.errorText {
+  color: #ff4d4f;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

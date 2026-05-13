@@ -1,0 +1,147 @@
+{
+  "sidebar": {
+    "dashboard": "儀表板",
+    "dataHub": "數據中心",
+    "analytics": "數據分析",
+    "automation": "自動化",
+    "security": "安全性",
+    "settings": "系統設定"
+  },
+  "topNav": {
+    "save": "儲存配置",
+    "pause": "暫停更新",
+    "resume": "恢復更新",
+    "engineStatus": "引擎狀態: 運行中",
+    "saved": "配置已儲存！",
+    "live": "運行中",
+    "share": "分享儀表板",
+    "dashboards": "儀表板",
+    "mainEngine": "主引擎控制台"
+  },
+  "dashboard": {
+    "empty": "儀表板目前是空的。點擊「新增面板」開始配置。",
+    "stressTest": "壓力測試",
+    "stopStress": "停止壓力測試",
+    "runStress": "執行壓力測試 (LTTB 測試)",
+    "currentBp": "目前斷點",
+    "addPanel": "新增面板"
+  },
+  "telemetry": {
+    "fps": "幀率 (FPS)",
+    "engineStatus": "引擎狀態：運行中",
+    "paused": "引擎狀態：已暫停",
+    "points": "處理數據點"
+  },
+  "dataHub": {
+    "tabs": {
+      "sources": "數據源管理",
+      "queries": "指標庫"
+    },
+    "sources": {
+      "title": "數據源",
+      "desc": "配置外部 API 連接與輪詢頻率。",
+      "add": "新增數據源",
+      "table": { "name": "名稱", "url": "API 終端網址", "interval": "頻率", "actions": "操作" }
+    },
+    "queries": {
+      "title": "指標庫",
+      "desc": "定義規則以從數據源中提取特定數值。",
+      "add": "新增指標",
+      "table": { "name": "指標名稱", "source": "來源", "path": "數值路徑", "actions": "操作" }
+    }
+  },
+  "settings": {
+    "title": "系統設定",
+    "desc": "配置平台級引擎參數與安全選項。",
+    "proxy": {
+      "title": "CORS 代理伺服器",
+      "desc": "用於在抓取外部 API 時繞過瀏覽器的跨網域限制。",
+      "url": "代理網址",
+      "hint": "Worker 必須將目標 API 附加在 ?url=... 參數後。"
+    },
+    "language": {
+      "title": "語系與在地化",
+      "desc": "更改平台顯示語言與文件語系。",
+      "label": "顯示語言"
+    },
+    "danger": {
+      "title": "危險區域",
+      "desc": "影響整個儀表板的不可逆操作。",
+      "resetTitle": "恢復出廠設定",
+      "resetDesc": "清除所有本地數據、數據源與面板配置。",
+      "resetBtn": "重置平台",
+      "confirm": "警告：這將刪除所有內容且無法復原。確定要繼續嗎？"
+    }
+  },
+  "modals": {
+    "common": {
+      "cancel": "取消",
+      "confirm": "確認",
+      "save": "儲存變更",
+      "next": "下一步",
+      "back": "上一步"
+    },
+    "addPanel": {
+      "titleStep1": "新增監控面板 - 步驟 1：基本資訊",
+      "titleStep2": "新增監控面板 - 步驟 2：指標與圖表配置",
+      "titleEdit": "編輯面板",
+      "typeLockedHint": "類型建立後無法更改",
+      "fieldTitle": "面板標題",
+      "fieldType": "視覺化類型",
+      "fieldMetric": "選取指標數據",
+      "placeholderTitle": "例如：請求吞吐量",
+      "addMetric": "新增指標",
+      "settings": {
+        "sectionTitle": "進階設定",
+        "precision": "小數點位數",
+        "min": "最小值",
+        "max": "最大值",
+        "betterWhen": "越好代表",
+        "betterWhenHigher": "數值越高越好",
+        "betterWhenLower": "數值越低越好",
+        "yMin": "Y 軸最小值",
+        "yMax": "Y 軸最大值",
+        "noSettings": "此視覺化類型無額外的進階設定。"
+      },
+      "types": {
+        "LINE": "即時折線圖",
+        "STAT": "單一統計值",
+        "SPARKLINE": "迷你趨勢圖",
+        "BAR": "對比長條圖",
+        "GAUGE": "圓形儀表盤",
+        "DONUT": "環狀佔比圖",
+        "TOPOLOGY": "網路拓撲圖",
+        "CANVAS": "互動式畫布"
+      }
+    },
+    "addDashboard": {
+      "title": "建立新儀表板",
+      "fieldName": "儀表板名稱",
+      "placeholder": "例如：業務數據監控"
+    },
+    "addSource": {
+      "title": "數據源配置",
+      "editTitle": "編輯數據源配置",
+      "fieldName": "數據源名稱",
+      "fieldUrl": "API 終端網址",
+      "fieldInterval": "同步頻率 (ms)",
+      "placeholderUrl": "https://api.example.com/metrics",
+      "internalNote": "目前使用內部模擬數據引擎。"
+    },
+    "addQuery": {
+      "title": "新增指標參數配置",
+      "editTitle": "編輯指標參數配置",
+      "fieldName": "指標名稱",
+      "fieldSource": "所屬數據源",
+      "fieldPath": "JSON 資料路徑 (Y軸)",
+      "fieldUnit": "數據單位",
+      "fieldTimePath": "時間路徑 (選填)",
+      "fieldTimeFormat": "時間格式",
+      "placeholderPath": "services.[name=checkout].rps"
+    },
+    "confirm": {
+      "deleteTitle": "確認刪除",
+      "deleteMsg": "您確定要刪除此項目嗎？刪除後將無法還原。"
+    }
+  }
+}

@@ -1,0 +1,214 @@
+@use '../../../styles/forms';
+@import '../../../styles/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  @extend %form-field;
+}
+
+.multiSelect {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.queryRow {
+  display: flex;
+  gap: 10px;
+}
+
+.flexDropdown {
+  flex: 1;
+}
+
+.metricDropdown {
+  width: 100%;
+}
+
+.removeBtn {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: none;
+  padding: 0 12px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background: #ef4444;
+    color: #fff;
+  }
+}
+
+.addBtn {
+  @extend %btn-base;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: $text-secondary;
+  margin-top: 4px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+}
+
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.typeOption {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    background: rgba($accent-color, 0.15);
+    border-color: $accent-color;
+    box-shadow: 0 0 20px rgba($accent-color, 0.2);
+
+    span {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .typeIcon {
+      color: $accent-color;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.typeIcon {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.typeOption span {
+  font-size: 0.8rem;
+  color: $text-secondary;
+}
+
+.advancedSection {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sectionTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.settingField {
+  @extend %form-field;
+}
+
+.footerActions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rightActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelBtn {
+  @extend %btn-cancel;
+}
+
+.confirmBtn {
+  @extend %btn-confirm;
+}
+
+.backBtn {
+  @extend %btn-cancel;
+}
+
+.nextBtn {
+  @extend %btn-confirm;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.noSettings {
+  text-align: center;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+// ── 編輯模式：類型鎖定顯示 ──────────────────────────────
+.typeLocked {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+
+  .lockIcon {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+
+  .typeIcon {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .lockedHint {
+    font-size: 0.75rem;
+    opacity: 0.4;
+    font-style: italic;
+    margin-left: auto;
+  }
+}

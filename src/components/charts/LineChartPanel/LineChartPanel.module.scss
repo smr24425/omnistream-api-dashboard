@@ -1,0 +1,45 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+.header {
+  @include panel-header;
+
+  .badge {
+    @include status-badge($success-color);
+    
+    &.live::before {
+      animation: pulse 2s infinite;
+    }
+  }
+
+  .deleteBtn {
+    @include action-button(#ff4444);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.canvasWrapper {
+  @include panel-content;
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .staticLayer { z-index: 1; }
+  .dynamicLayer { z-index: 2; }
+  .interactionLayer { z-index: 3; }
+}

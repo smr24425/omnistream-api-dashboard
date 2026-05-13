@@ -1,0 +1,68 @@
+@import '../../../styles/variables';
+
+.tableWrapper {
+  background: #111418;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tableScrollArea {
+  width: 100%;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  // 使用傳入的 minWidth
+  min-width: var(--min-width, 800px);
+
+  th {
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.4); // $text-secondary
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: #fff;
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.01);
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 40px !important;
+  color: rgba(255, 255, 255, 0.2);
+  font-style: italic;
+}

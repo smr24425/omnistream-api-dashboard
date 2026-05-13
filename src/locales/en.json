@@ -1,0 +1,146 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "dataHub": "Data Hub",
+    "analytics": "Analytics",
+    "automation": "Automation",
+    "security": "Security",
+    "settings": "Settings"
+  },
+  "topNav": {
+    "save": "Save Config",
+    "pause": "Pause Engine",
+    "resume": "Resume Engine",
+    "saved": "Configuration Saved!",
+    "live": "Live",
+    "share": "Share Dashboard",
+    "dashboards": "Dashboards",
+    "mainEngine": "Main Engine"
+  },
+  "dashboard": {
+    "empty": "Dashboard is empty. Click \"Add Panel\" to begin.",
+    "stressTest": "Stress Test",
+    "stopStress": "Stop Stress Test",
+    "runStress": "Run Stress Test (LTTB Test)",
+    "currentBp": "Current BP",
+    "addPanel": "Add Panel"
+  },
+  "telemetry": {
+    "fps": "FPS",
+    "engineStatus": "Engine: Live",
+    "paused": "Engine: Paused",
+    "points": "Data Points"
+  },
+  "dataHub": {
+    "tabs": {
+      "sources": "Data Sources",
+      "queries": "Metric Library"
+    },
+    "sources": {
+      "title": "Data Sources",
+      "desc": "Configure external API connections and polling intervals.",
+      "add": "Add Source",
+      "table": { "name": "Name", "url": "Endpoint URL", "interval": "Interval", "actions": "Actions" }
+    },
+    "queries": {
+      "title": "Metric Library",
+      "desc": "Define rules to extract specific data points from sources.",
+      "add": "Add Metric",
+      "table": { "name": "Metric Name", "source": "Source", "path": "Value Path", "actions": "Actions" }
+    }
+  },
+  "settings": {
+    "title": "System Settings",
+    "desc": "Configure platform-level engine parameters and security.",
+    "proxy": {
+      "title": "CORS Proxy Server",
+      "desc": "Used to bypass browser CORS restrictions when fetching external APIs.",
+      "url": "Proxy URL",
+      "hint": "The worker must append ?url=... to the target API."
+    },
+    "language": {
+      "title": "Language & Localization",
+      "desc": "Change the platform display language and documentation.",
+      "label": "Display Language"
+    },
+    "danger": {
+      "title": "Danger Zone",
+      "desc": "Irreversible actions that affect your entire dashboard.",
+      "resetTitle": "Factory Reset",
+      "resetDesc": "Clear all local data, data sources, and panels.",
+      "resetBtn": "Reset Platform",
+      "confirm": "Warning: This will delete EVERYTHING. Proceed?"
+    }
+  },
+  "modals": {
+    "common": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "save": "Save Changes",
+      "next": "Next Step",
+      "back": "Back"
+    },
+    "addPanel": {
+      "titleStep1": "Add New Panel - Step 1: Base Info",
+      "titleStep2": "Add New Panel - Step 2: Configure Metric",
+      "titleEdit": "Edit Panel",
+      "typeLockedHint": "type cannot be changed",
+      "fieldTitle": "Panel Title",
+      "fieldType": "Visualization Type",
+      "fieldMetric": "Select Metric",
+      "placeholderTitle": "e.g. Request Throughput",
+      "addMetric": "Add Metric",
+      "settings": {
+        "sectionTitle": "Advanced Settings",
+        "precision": "Decimal Places",
+        "min": "Minimum Value",
+        "max": "Maximum Value",
+        "betterWhen": "Better When",
+        "betterWhenHigher": "Higher is better",
+        "betterWhenLower": "Lower is better",
+        "yMin": "Y-Axis Min",
+        "yMax": "Y-Axis Max",
+        "noSettings": "No advanced settings available for this panel type."
+      },
+      "types": {
+        "LINE": "Line Chart",
+        "STAT": "Stat Value",
+        "SPARKLINE": "Sparkline Chart",
+        "BAR": "Bar Chart",
+        "GAUGE": "Gauge Meter",
+        "DONUT": "Donut Ring",
+        "TOPOLOGY": "Topology Map",
+        "CANVAS": "Interactive Canvas"
+      }
+    },
+    "addDashboard": {
+      "title": "Create New Dashboard",
+      "fieldName": "Dashboard Name",
+      "placeholder": "e.g. Platform Overview"
+    },
+    "addSource": {
+      "title": "Data Source Configuration",
+      "editTitle": "Edit Data Source",
+      "fieldName": "Source Name",
+      "fieldUrl": "Endpoint URL",
+      "fieldInterval": "Sync Interval (ms)",
+      "placeholderUrl": "https://api.example.com/metrics",
+      "internalNote": "Internal mock data engine active."
+    },
+    "addQuery": {
+      "title": "Metric Configuration",
+      "editTitle": "Edit Metric Configuration",
+      "fieldName": "Metric Name",
+      "fieldSource": "Parent Source",
+      "fieldPath": "JSON Data Path (Y-Axis)",
+      "fieldUnit": "Data Unit",
+      "fieldTimePath": "Time Path (Optional)",
+      "fieldTimeFormat": "Time Format",
+      "placeholderPath": "services.[name=checkout].rps"
+    },
+    "confirm": {
+      "deleteTitle": "Confirm Deletion",
+      "deleteMsg": "Are you sure you want to delete this item? This action is permanent."
+    }
+  }
+}

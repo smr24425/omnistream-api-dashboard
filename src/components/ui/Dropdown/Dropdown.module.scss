@@ -1,0 +1,140 @@
+@import '../../../styles/variables';
+
+.dropdown {
+  position: relative;
+  min-width: 100px;
+  user-select: none;
+
+  &.active {
+    .trigger {
+      border-color: rgba($accent-color, 0.4);
+      background: rgba($accent-color, 0.05);
+      box-shadow: 0 0 15px rgba($accent-color, 0.1);
+    }
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 16px;
+  background: #0b0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .triggerIcon {
+    display: flex;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .label {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .chevron {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.rotate {
+      transform: rotate(180deg);
+      color: $accent-color;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: rgba(13, 15, 18, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 4px;
+  z-index: $z-tooltip;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: slideIn 0.2s cubic-bezier(0, 0, 0.2, 1);
+  max-height: 260px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+  }
+}
+
+.menuPortal {
+  background: rgba(13, 15, 18, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 4px;
+  z-index: $z-dropdown-menu; // above modal overlay
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: slideIn 0.2s cubic-bezier(0, 0, 0.2, 1);
+
+  &::-webkit-scrollbar { width: 6px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+
+  &.selected {
+    background: rgba($accent-color, 0.1);
+    color: $accent-color;
+    font-weight: 600;
+  }
+
+  .optIcon {
+    font-size: 14px;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

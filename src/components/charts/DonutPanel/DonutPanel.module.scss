@@ -1,0 +1,168 @@
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+.content {
+  @include panel-content;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem 1rem;
+  overflow: hidden;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.2);
+  font-style: italic;
+}
+
+// ── 主佈局：左側環圖 + 右側 Legend ─────────────────────
+.chartLayout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-height: 0;
+}
+
+// ── SVG 環狀圖區塊 ──────────────────────────────────────
+.svgWrapper {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.segment {
+  cursor: pointer;
+  transition:
+    stroke-width 0.2s ease,
+    opacity 0.2s ease,
+    filter 0.2s ease,
+    transform 0.2s ease;
+  transform-origin: 80px 80px; // SVG 中心點
+}
+
+// ── SVG 中央文字 ────────────────────────────────────────
+.centerValue {
+  font-size: 18px;
+  font-weight: 800;
+  fill: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.5px;
+}
+
+.centerUnit {
+  font-size: 8px;
+  fill: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.centerLabel {
+  font-size: 15px;
+  font-weight: 700;
+  fill: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  transition: fill 0.2s;
+}
+
+.centerSub {
+  font-size: 8px;
+  fill: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.5px;
+}
+
+// ── Legend ──────────────────────────────────────────────
+.legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  overflow-y: auto;
+  max-height: 160px;
+  padding-right: 4px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border: 1px solid transparent;
+
+  &:hover,
+  &.legendActive {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.legendDot {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px currentColor;
+}
+
+.legendName {
+  flex: 1;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.legendVal {
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.legendUnit {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: 2px;
+}
+
+.legendPct {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+  min-width: 38px;
+  text-align: right;
+}

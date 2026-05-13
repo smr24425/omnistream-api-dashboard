@@ -1,0 +1,28 @@
+$bg-color: #0a0a0c;
+$panel-bg: #141417;
+$text-primary: #e0e0e0;
+$text-secondary: #909095;
+$accent-color: #4f46e5;
+$accent-glow: rgba(79, 70, 229, 0.4);
+$grid-color: rgba(255, 255, 255, 0.05);
+$border-color: rgba(255, 255, 255, 0.1);
+$font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+// semantic colors (align with src/config/chartThemes.ts)
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+
+// z-index scale (keep centralized to avoid "magic numbers" across components)
+$z-dashboard-ui: 100;
+$z-tooltip: 1000;
+$z-modal-overlay: 3000;
+$z-dropdown-menu: 4000;
+$z-confirm-overlay: 10000;
+
+@mixin glass-panel {
+  background: rgba(20, 20, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid $border-color;
+  border-radius: 12px;
+}

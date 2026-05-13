@@ -1,0 +1,154 @@
+@import '../../../styles/variables';
+
+.tabsWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden; // 確保箭頭陰影不會溢出
+}
+
+.tabBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 0 12px;
+  flex: 1;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  // 隱藏捲軸，保持介面乾淨 (因為我們有箭頭了)
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  border-bottom: none;
+
+  // --- 關鍵修正：防止縮小時變形 ---
+  flex-shrink: 0;
+  white-space: nowrap;
+  // ---------------------------
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &.active {
+    background: rgba($accent-color, 0.1);
+    color: #fff;
+    border-color: rgba($accent-color, 0.3);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $accent-color;
+    }
+  }
+}
+
+.tabName {
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deleteTabBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #ef4444;
+    background: rgba(#ef4444, 0.1);
+  }
+
+  svg {
+    font-size: 14px;
+  }
+}
+
+// 捲動箭頭樣式
+.arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.8); // 略深色背景增加辨識度
+  backdrop-filter: blur(4px);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  width: 28px;
+  height: 32px;
+  z-index: 10;
+  transition: all 0.2s;
+  border-radius: 4px;
+  margin-top: 4px;
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.left {
+    margin-left: 4px;
+  }
+
+  &.right {
+    margin-right: 4px;
+  }
+}
+
+.addTabBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 0px;
+  margin-left: 8px;
+  margin-right: 12px;
+  flex-shrink: 0; // 防止新增按鈕被擠壓
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}

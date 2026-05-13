@@ -1,0 +1,111 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+// ── 圖表主區域 ───────────────────────────────────────────
+.chartArea {
+  @include panel-content;
+  display: flex;
+  gap: 2px;
+  padding: 10px 10px 10px 36px; // 左側留空給 Y 軸標籤
+  position: relative;
+  // 網格背景（略微加深，提升視覺感）
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+// ── 每根長條的外框容器 ──────────────────────────────────
+.barWrapper {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+// ── 長條本體 ─────────────────────────────────────────────
+.bar {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: $accent-color;
+  // 只有頂端圓角（底部貼齊零線）
+  border-radius: 2px 2px 0 0;
+  min-width: 2px;
+  min-height: 2px;
+  opacity: 0.65;
+  transform-origin: bottom; // 正數從底部（零點）生長
+  animation: growIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition:
+    opacity 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+
+  // 負數：底部圓角、頂端貼齊零線
+  &.negative {
+    background: $warning-color;
+    transform-origin: top;
+    border-radius: 0 0 2px 2px;
+  }
+
+  // Hover 高亮：保留各自顏色語意，加發光
+  &.active {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba($accent-color, 0.7), 0 0 3px rgba($accent-color, 0.4);
+    transform: scaleX(1.15);
+    z-index: 2;
+
+    &.negative {
+      box-shadow: 0 0 10px rgba($warning-color, 0.7), 0 0 3px rgba($warning-color, 0.4);
+    }
+  }
+}
+
+// ── 零點基準線（有負數時才顯示） ────────────────────────
+.zeroLine {
+  position: absolute;
+  left: 36px;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 1;
+
+  // 兩端的刻度點
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &::before { left: 0; }
+  &::after  { right: 0; }
+}
+
+// ── Y 軸標籤 ─────────────────────────────────────────────
+.yLabels {
+  @include chart-axis-label;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+// ── 進場動畫 ─────────────────────────────────────────────
+@keyframes growIn {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}

@@ -1,0 +1,89 @@
+@import '../../../styles/mixins';
+
+.panelContainer {
+  @include panel-base;
+}
+
+.header {
+  @include panel-header;
+
+  .badge {
+    @include status-badge(#818cf8);
+  }
+
+  .deleteBtn {
+    @include action-button(#ff4444);
+  }
+}
+
+.content {
+  @include panel-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1.5rem;
+}
+
+.gaugeWrapper {
+  width: 100%;
+  max-width: 220px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+}
+
+.bgPath {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+.progressPath {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.valueDisplay {
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.mainValue {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.3s ease;
+  letter-spacing: -1px;
+}
+
+.unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+}
+
+.footer {
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statusLabel {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
