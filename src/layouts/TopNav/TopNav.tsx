@@ -7,14 +7,12 @@ import { useLocation } from 'react-router-dom';
 import { MobileMenu } from '../../components/ui/MobileMenu/MobileMenu';
 
 interface TopNavProps {
-  onSave: () => void;
   isPaused: boolean;
   onTogglePause: () => void;
   onUpdateLanguage: (lang: 'en' | 'zh') => void;
 }
 
 export const TopNav: React.FC<TopNavProps> = ({
-  onSave,
   isPaused,
   onTogglePause,
   onUpdateLanguage

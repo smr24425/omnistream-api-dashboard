@@ -304,7 +304,6 @@ function App() {
       <Sidebar />
       <div className={styles.contentWrapper}>
         <TopNav
-          onSave={() => alert(t('topNav.saved'))}
           isPaused={schema.settings.isPaused}
           onTogglePause={togglePause}
           onUpdateLanguage={updateLanguage}

@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Quick Links
-- **[Live Demo](https://smr24425.github.io/omnistream-api-dashboard/)**
+- **<a href="https://smr24425.github.io/omnistream-api-dashboard/" target="_blank">Live Demo</a>**
 
 ---
 

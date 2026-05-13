@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 快速連結
-- **[線上測試 Demo](https://smr24425.github.io/omnistream-api-dashboard/)**
+- **<a href="https://smr24425.github.io/omnistream-api-dashboard/" target="_blank">線上測試 Demo</a>**
 
 ---
 

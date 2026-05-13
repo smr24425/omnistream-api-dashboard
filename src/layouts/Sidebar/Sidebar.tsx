@@ -4,9 +4,6 @@ import styles from './Sidebar.module.scss';
 import {
   FiGrid,
   FiDatabase,
-  FiBarChart2,
-  FiZap,
-  FiShield,
   FiSettings
 } from 'react-icons/fi';
 
